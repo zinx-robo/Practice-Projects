@@ -1,0 +1,287 @@
+@media (max-width: 28em) {
+    .style-details {
+      grid-template-columns: 1fr;
+      grid-gap: 50px;
+    }
+  }
+
+@font-face {
+    font-family: clutchee ;
+    src: url(../grid-project/fonts/clutchee-webfont.woff);
+}
+
+@font-face {
+    font-family: dubtronic-solid;
+    src: url(../grid-project/fonts/Dubtronic-Solid-webfont.woff);
+}
+
+@font-face {
+    font-family: dubtronic-inline;
+    src: url(../grid-project/fonts/Dubtronic-Inline-webfont.woff);
+}
+
+@font-face {
+    font-family: 20db;
+    src: url(../grid-project/fonts/20db-webfont.woff);
+}
+
+@font-face {
+    font-family: abel;
+    src: url(../grid-project/fonts/abel-regular-webfont.woff);
+}
+
+@font-face {
+    font-family: furore;
+    src: url(../grid-project/fonts/Furore-webfont.woff);
+}
+
+@font-face {
+    font-family: adventpro-bold;
+    src: url(../grid-project/fonts/adventpro-bold-webfont.woff);
+}
+
+@font-face {
+    font-family: adventpro-extra-light;
+    src: url(../grid-project/fonts/adventpro-extralight-webfont.woff);
+}
+
+@font-face {
+    font-family: adventpro-light;
+    src: url(../grid-project/fonts/adventpro-light-webfont.woff);
+}
+
+@font-face {
+    font-family: adventpro-regular;
+    src: url(../grid-project/fonts/adventpro-regular-webfont.woff);
+}
+$data-color: #009999;
+$text-color: #009999;
+$background-color: #141f1f;
+
+@mixin navlink-styles {
+    text-decoration: none;
+    font-family: dubtronic-inline;
+    font-size: 20px;
+    color: $text-color;
+    transition: .5s;
+    a:hover{ color: white;
+    }
+    
+}
+
+@mixin border-styles {
+    border: 3px solid steelblue;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px 3px black;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+}
+
+
+.container{
+    background-color: $data-color;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 5fr 2.5fr;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 5fr));
+    grid-template-areas: "header header side-bar-right"
+                         "side-bar-left hero-section side-bar-right"
+                         "side-bar-left hero-section side-bar-right"
+                         "side-bar-left footer footer";
+}
+
+.header{ 
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 20px;  
+    background-color: $background-color;
+    grid-area: header;
+    @include border-styles()
+}
+
+.header-nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    border-bottom: 3px solid $data-color;
+}
+
+.header > img{
+    height: 70px;
+    width: 1350px;
+}
+
+.side-bar-left{
+    background-color: $background-color;
+    grid-area: side-bar-left;
+    @include border-styles()
+}
+
+.side-bar-left > .navlinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-bar-left >.navlinks > .art > a{
+    display: flex;
+    justify-content: center;
+
+}
+
+.hero-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: hero-section;
+    background-image: url(../grid-project/images/blue_green_metal_thing.webp);
+    height: 600px;
+    @include border-styles()
+}
+
+.hero-section > p{
+    font-size: 2em;
+    color: white;
+    font-family: dubtronic-inline;
+}
+
+.hero-section > p >span{
+    color: $data-color;
+}
+
+.hero-section > p > strong{
+    color:$data-color;
+}
+
+.hero-section > h1{
+    padding: 20px;
+    background-color: black;
+    outline: 3px solid white;
+    outline-offset: .25em;
+    margin: .5em 0 .5em;
+    font-family: dubtronic-inline;
+    color: $data-color;
+    font-size: 3em;
+    font-weight: 700;
+    
+}
+
+.hero-section > h1 > bold{
+    font-size: .5em;
+}
+
+.side-bar-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $background-color;
+    grid-area: side-bar-right;
+    @include border-styles();
+}
+
+.side-bar-right > a{
+    @include navlink-styles();
+    font-size: 40px;
+}
+
+.side-bar-right >.dad{
+    @include navlink-styles();
+    font-size: 40px;
+    padding-top: 10px;
+}
+
+.side-bar-right > img{
+    @include border-styles()
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: $background-color;
+    grid-area: footer;
+    height: 15vh;
+    @include border-styles()
+}
+
+.footer > img{
+    grid-column: 2;
+    height: 15vh;
+    width: 600px;
+}
+
+.footer > h1{
+    align-items: center;
+    margin-left:50px;
+    padding: 10px;
+    font-family: dubtronic-inline;
+    color: white;
+    font-size: 3em;
+}
+
+.footer > h1 > span{
+    color:$data-color;
+}
+
+.searchbar{
+    padding: 10px;
+    grid-column: 4;
+    align-content: bottom;
+    margin: 20px 20px 0px 0px;
+
+}
+
+.searchbar p{
+    font-family: dubtronic-inline;
+    margin-left: 1px;
+    font-size: .75em;
+    color: $text-color;
+}
+
+.searchbar p span{
+    font-weight: 300;
+    color: white;
+}
+
+.searchbar > input{
+    font-family: dubtronic-inline;
+    font-size: 2em;
+    border: 1px transparent solid ;
+    height: 60px;  
+    width: 300px;
+    box-shadow: -5px -5px $text-color; 
+}
+
+.navlinks{
+    @include navlink-styles()
+}
+
+.navlinks a{
+    @include navlink-styles()
+}
+
+.art{
+    padding-top: 10px;
+    border-top: 2px solid #52527a;
+}
+
+.art > img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 250px;
+    width: 250px;
+}
+
+.art > p{
+    display: flex;
+    justify-content: center;
+
+}

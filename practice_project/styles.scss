@@ -1,0 +1,91 @@
+$master-site-color: #7732a8;
+
+@mixin flex-box-style{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100vw;
+    border: 5px solid ;
+    border-radius: 5px;
+    background-image: url(../practice_project/images/x.webp)
+}
+
+@mixin nav-element-styles{
+    text-decoration: none;
+    color: black;
+    font-family: 'dubtronicinline';
+    font-size: 2em;
+    align-items: center;
+    
+}
+
+
+
+@font-face {
+    font-family: 'furore';
+    src: url(../practice_project/fonts/Furore-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dubtronicinline';
+    src: url(../practice_project/fonts/Dubtronic-inline-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clutchee';
+    src: url(../practice_project/fonts/clutchee-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'abel-regular';
+    src: url(../practice_project/fonts/abel-regular-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.container{
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    background-image: url(../practice_project/images/black_white_dots.webp);
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.header{
+    @include flex-box-style;
+}
+
+.main{
+   height: 3rem;
+}
+
+.search-bar input{
+    font-family: 'dubtronicsolid';  
+}
+
+.footer{
+    @include flex-box-style;
+   
+}
+
+.nav-links a {
+    @include nav-element-styles;
+}
+
+.copyright{
+    font-family: abel-regular;
+}

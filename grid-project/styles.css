@@ -1,0 +1,378 @@
+@media (max-width: 28em) {
+  .style-details {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 50px;
+  }
+}
+
+@font-face {
+  font-family: clutchee;
+  src: url(../grid-project/fonts/clutchee-webfont.woff);
+}
+
+@font-face {
+  font-family: dubtronic-solid;
+  src: url(../grid-project/fonts/Dubtronic-Solid-webfont.woff);
+}
+
+@font-face {
+  font-family: dubtronic-inline;
+  src: url(../grid-project/fonts/Dubtronic-Inline-webfont.woff);
+}
+
+@font-face {
+  font-family: 20db;
+  src: url(../grid-project/fonts/20db-webfont.woff);
+}
+
+@font-face {
+  font-family: abel;
+  src: url(../grid-project/fonts/abel-regular-webfont.woff);
+}
+
+@font-face {
+  font-family: furore;
+  src: url(../grid-project/fonts/Furore-webfont.woff);
+}
+
+@font-face {
+  font-family: adventpro-bold;
+  src: url(../grid-project/fonts/adventpro-bold-webfont.woff);
+}
+
+@font-face {
+  font-family: adventpro-extra-light;
+  src: url(../grid-project/fonts/adventpro-extralight-webfont.woff);
+}
+
+@font-face {
+  font-family: adventpro-light;
+  src: url(../grid-project/fonts/adventpro-light-webfont.woff);
+}
+
+@font-face {
+  font-family: adventpro-regular;
+  src: url(../grid-project/fonts/adventpro-regular-webfont.woff);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.container {
+  background-color: #009999;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: 1fr 5fr 2.5fr;
+      grid-template-columns: 1fr 5fr 2.5fr;
+  -ms-grid-rows: (minmax(100px, 5fr))[auto-fit];
+      grid-template-rows: repeat(auto-fit, minmax(100px, 5fr));
+      grid-template-areas: "header header side-bar-right" "side-bar-left hero-section side-bar-right" "side-bar-left hero-section side-bar-right" "side-bar-left footer footer";
+}
+
+.header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  padding-top: 20px;
+  background-color: #141f1f;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+  border: 3px solid steelblue;
+  border-radius: 3px;
+  -webkit-box-shadow: 3px 3px 3px 3px black;
+          box-shadow: 3px 3px 3px 3px black;
+}
+
+.header-nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #009999;
+}
+
+.header > img {
+  height: 70px;
+  width: 1350px;
+}
+
+.side-bar-left {
+  background-color: #141f1f;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: side-bar-left;
+  border: 3px solid steelblue;
+  border-radius: 3px;
+  -webkit-box-shadow: 3px 3px 3px 3px black;
+          box-shadow: 3px 3px 3px 3px black;
+}
+
+.side-bar-left > .navlinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.side-bar-left > .navlinks > .art > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: hero-section;
+  background-image: url(../grid-project/images/blue_green_metal_thing.webp);
+  height: 600px;
+  border: 3px solid steelblue;
+  border-radius: 3px;
+  -webkit-box-shadow: 3px 3px 3px 3px black;
+          box-shadow: 3px 3px 3px 3px black;
+}
+
+.hero-section > p {
+  font-size: 2em;
+  color: white;
+  font-family: dubtronic-inline;
+}
+
+.hero-section > p > span {
+  color: #009999;
+}
+
+.hero-section > p > strong {
+  color: #009999;
+}
+
+.hero-section > h1 {
+  padding: 20px;
+  background-color: black;
+  outline: 3px solid white;
+  outline-offset: .25em;
+  margin: .5em 0 .5em;
+  font-family: dubtronic-inline;
+  color: #009999;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.hero-section > h1 > bold {
+  font-size: .5em;
+}
+
+.side-bar-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #141f1f;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  grid-area: side-bar-right;
+  border: 3px solid steelblue;
+  border-radius: 3px;
+  -webkit-box-shadow: 3px 3px 3px 3px black;
+          box-shadow: 3px 3px 3px 3px black;
+}
+
+.side-bar-right > a {
+  text-decoration: none;
+  font-family: dubtronic-inline;
+  font-size: 20px;
+  color: #009999;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-size: 40px;
+}
+
+.side-bar-right > a a:hover {
+  color: white;
+}
+
+.side-bar-right > .dad {
+  text-decoration: none;
+  font-family: dubtronic-inline;
+  font-size: 20px;
+  color: #009999;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-size: 40px;
+  padding-top: 10px;
+}
+
+.side-bar-right > .dad a:hover {
+  color: white;
+}
+
+.side-bar-right > img {
+  border: 3px solid steelblue;
+  border-radius: 3px;
+  -webkit-box-shadow: 3px 3px 3px 3px black;
+          box-shadow: 3px 3px 3px 3px black;
+}
+
+.footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  background-color: #141f1f;
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+  height: 15vh;
+  border: 3px solid steelblue;
+  border-radius: 3px;
+  -webkit-box-shadow: 3px 3px 3px 3px black;
+          box-shadow: 3px 3px 3px 3px black;
+}
+
+.footer > img {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  height: 15vh;
+  width: 600px;
+}
+
+.footer > h1 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 50px;
+  padding: 10px;
+  font-family: dubtronic-inline;
+  color: white;
+  font-size: 3em;
+}
+
+.footer > h1 > span {
+  color: #009999;
+}
+
+.searchbar {
+  padding: 10px;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-flex-line-pack: bottom;
+      align-content: bottom;
+  margin: 20px 20px 0px 0px;
+}
+
+.searchbar p {
+  font-family: dubtronic-inline;
+  margin-left: 1px;
+  font-size: .75em;
+  color: #009999;
+}
+
+.searchbar p span {
+  font-weight: 300;
+  color: white;
+}
+
+.searchbar > input {
+  font-family: dubtronic-inline;
+  font-size: 2em;
+  border: 1px transparent solid;
+  height: 60px;
+  width: 300px;
+  -webkit-box-shadow: -5px -5px #009999;
+          box-shadow: -5px -5px #009999;
+}
+
+.navlinks {
+  text-decoration: none;
+  font-family: dubtronic-inline;
+  font-size: 20px;
+  color: #009999;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.navlinks a:hover {
+  color: white;
+}
+
+.navlinks a {
+  text-decoration: none;
+  font-family: dubtronic-inline;
+  font-size: 20px;
+  color: #009999;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.navlinks a a:hover {
+  color: white;
+}
+
+.art {
+  padding-top: 10px;
+  border-top: 2px solid #52527a;
+}
+
+.art > img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 250px;
+  width: 250px;
+}
+
+.art > p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=styles.css.map */

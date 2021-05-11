@@ -1,0 +1,35 @@
+
+
+.container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 5fr 2.5fr;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 5fr));
+    grid-template-areas: "header header side-bar-right"
+                         "side-bar-left hero-section side-bar-right"
+                         "side-bar-left hero-section side-bar-right"
+                         "side-bar-left footer footer";
+}
+
+.header{
+    grid-area: header;
+}
+
+.side-bar-left{
+    grid-area: side-bar-left;
+}
+
+.hero-section{
+    grid-area: hero-section;
+    
+}
+
+.side-bar-right{
+    grid-area: side-bar-right;
+    justify-content: center;
+}
+
+.footer{
+    grid-area: footer;
+    height: 15vh;
+}
